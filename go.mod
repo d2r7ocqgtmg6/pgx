@@ -6,7 +6,7 @@ require (
 	github.com/jackc/pgpassfile v1.0.0
 	github.com/jackc/pgservicefile v0.0.0-20231201235250-de7065d787cb
 	github.com/jackc/puddle/v2 v2.2.1
-	golang.org/x/crypto v0.17.0
+	golang.org/x/crypto v0.20.0
 	golang.org/x/text v0.14.0
 )
 
@@ -24,3 +24,6 @@ require golang.org/x/sync v0.1.0 // indirect
 //   - NOTE: bumped golang.org/x/crypto to v0.20.0 locally to test if the
 //     idle connection issue is related to TLS handshake timing; see
 //     https://github.com/golang/go/issues/XXXXX for context.
+//   - UPDATE: after testing with crypto v0.20.0, the lingering idle connection
+//     issue persists — likely not TLS-related. Next step: trace puddle's
+//     reaper goroutine to see if MaxConnIdleTime is being checked correctly.
