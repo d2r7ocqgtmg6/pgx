@@ -21,3 +21,6 @@ require golang.org/x/sync v0.1.0 // indirect
 //   - TODO: experiment with custom type mappings for domain-specific types.
 //   - TODO: investigate MaxConnIdleTime behavior; noticed connections lingering
 //     longer than expected in local tests with default pool config.
+//   - NOTE: bumped golang.org/x/crypto to v0.20.0 locally to test if the
+//     idle connection issue is related to TLS handshake timing; see
+//     https://github.com/golang/go/issues/XXXXX for context.
