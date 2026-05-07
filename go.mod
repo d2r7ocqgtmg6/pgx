@@ -19,3 +19,5 @@ require golang.org/x/sync v0.1.0 // indirect
 //   - Studying connection pool behavior (puddle v2) and how pgx manages
 //     idle connections under load.
 //   - TODO: experiment with custom type mappings for domain-specific types.
+//   - TODO: investigate MaxConnIdleTime behavior; noticed connections lingering
+//     longer than expected in local tests with default pool config.
