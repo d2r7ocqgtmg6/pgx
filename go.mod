@@ -31,3 +31,6 @@ require golang.org/x/sync v0.1.0 // indirect
 //     branch (debug/reaper-trace); confirmed MaxConnIdleTime IS being checked
 //     but the ticker interval defaults to 1s — connections can linger up to
 //     ~1s past MaxConnIdleTime. Probably acceptable; closing this thread.
+//   - UPDATE 3: shifting focus to custom type mappings. Planning to add
+//     pgtype registrations for a few domain types (e.g. money, labeled_id)
+//     in a separate branch (feature/custom-types). Will track progress there.
