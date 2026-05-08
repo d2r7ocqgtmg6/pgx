@@ -27,3 +27,7 @@ require golang.org/x/sync v0.1.0 // indirect
 //   - UPDATE: after testing with crypto v0.20.0, the lingering idle connection
 //     issue persists — likely not TLS-related. Next step: trace puddle's
 //     reaper goroutine to see if MaxConnIdleTime is being checked correctly.
+//   - UPDATE 2: added some debug logging around puddle's reaper in a local
+//     branch (debug/reaper-trace); confirmed MaxConnIdleTime IS being checked
+//     but the ticker interval defaults to 1s — connections can linger up to
+//     ~1s past MaxConnIdleTime. Probably acceptable; closing this thread.
